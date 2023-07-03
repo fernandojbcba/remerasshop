@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <div class="wrapper">
+      <header class="header-mobile">
+        <div class="logo"></div>
+        <div class="loggin_mobile">
+          <div class="header__container__login" data-headerlogin></div>
+          <div class="header__container__nombre" data-headerNombre></div>
+        </div>
+        <button class="open-menu" id="open-menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </header>
+      <aside>
+        <button class="close-menu" id="close-menu">
+          <i class="bi bi-x"></i>
+        </button>
+        <header class="header_full">
+          <div class="logo"></div>
+          <div class="loggin">
+            <div class="header__container__login" data-headerlogin1></div>
+            <div class="header__container__nombre" data-headerNombre1></div>
+          </div>
+        </header>
+        <nav>
+          <ul class="menu">
+            <li>
+              <button id="todos" class="boton-menu boton-categoria active">
+                <i class="bi bi-caret-right-fill"></i>Todos los productos
+              </button>
+            </li>
+            <li>
+              <button id="pelotas" class="boton-menu boton-categoria">
+                <i class="bi bi-caret-right"></i>Pelotas
+              </button>
+            </li>
+            <li>
+              <button id="remeras" class="boton-menu boton-categoria">
+                <i class="bi bi-caret-right"></i>Remeras
+              </button>
+            </li>
+            <li>
+              <button id="accesorios" class="boton-menu boton-categoria">
+                <i class="bi bi-caret-right"></i>Accesorios
+              </button>
+            </li>
+            <li>
+              <a class="boton-menu boton-carrito" href="{% url 'carrito' %}">
+                <i class="bi bi-cart-fill"></i>Carrito
+                <span id="numerito" class="numerito">0</span>
+              </a>
+            </li>
+            <li>
+              <a class="boton-menu boton-categoria" href="{% url 'contacto' %}">
+                <i class="bi bi-envelope-at"></i>Contacto
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <footer>
+          <p class="texto-footer">© 2023 Remerashop</p>
+        </footer>
+      </aside>
+      <main>
+        <h2 class="titulo-principal" id="titulo-principal">
+          Todos los produtos
+        </h2>
+        <div id="contenedor-productos" class="contenedor-productos">
+          <!-- Esto se rellena con js  -->
+        </div>
+      </main>
+    </div>
+    <script src="{% static './js/main.js' %}"></script>
+{% endblock %}

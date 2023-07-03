@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="wrapper">
+      <header class="header-mobile">
+        <div class="logo"></div>
+        <div class="loggin_mobile">
+          <div class="header__container__login" data-headerlogin></div>
+          <div class="header__container__nombre" data-headerNombre></div>
+        </div>
+        <button class="open-menu" id="open-menu">
+          <i class="bi bi-list"></i>
+        </button>
+      </header>
+      <aside>
+        <button class="close-menu" id="close-menu">
+          <i class="bi bi-x"></i>
+        </button>
+        <header class="header_full">
+          <div class="logo"></div>
+          <div class="loggin">
+            <div class="header__container__login" data-headerlogin1></div>
+            <div class="header__container__nombre" data-headerNombre1></div>
+          </div>
+        </header>
+        <nav>
+          <ul class="menu">
+            <li>
+              <a class="boton-menu boton-volver" href="{% url 'tienda' %}">
+                <i class="bi bi-arrow-return-left"></i>Seguir comprando
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <footer>
+          <p class="texto-footer">© 2023 Remerashop</p>
+        </footer>
+      </aside>
+      <main>
+        <div>
+          <section class="contacto">
+            <h2 class="contacto__title">Contactanos!</h2>
+            <form
+              id="formsubmit"
+              action=""
+              class="formulario flex flex--column"
+            >
+              <fieldset>
+                <legend class="form__label">Datos de Contacto</legend>
+                <div class="input-container">
+                  <input
+                    name="name"
+                    id="name"
+                    class="input"
+                    type="text"
+                    placeholder="Nombre"
+                    required
+                    data-tipo="nombre"
+                  />
+                  <label class="input-label" for="name">Nombre</label>
+                  <span class="input-message-error"
+                    >Este campo no es valido</span
+                  >
+                </div>
+                <div class="input-container">
+                  <input
+                    name="email"
+                    id="email"
+                    class="input"
+                    type="email"
+                    placeholder="Email"
+                    required
+                    data-tipo="email"
+                  />
+                  <label class="input-label" for="email">Email</label>
+                  <span class="input-message-error"
+                    >Este campo no es valido</span
+                  >
+                </div>
+
+                <div class="input-container">
+                  <input
+                    name="Comentario"
+                    id="Comentario"
+                    class="input"
+                    type="text"
+                    placeholder="Comentario"
+                    required
+                    maxlength="150"
+                    minlength="30"
+                    data-tipo="Comentario"
+                  />
+                  <label class="input-label" for="Comentario">Comentario</label>
+                  <span class="input-message-error"
+                    >Este campo no es valido</span
+                  >
+                </div>
+              </fieldset>
+
+              <button type="submit" class="button">Enviar</button>
+              <button type="reset" class="button">Limpiar</button>
+            </form>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="{% static './js/validaciones.js' %}"></script>
+ {% endblock %}
