@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$z)ctbmjkkgtygb&(g+r9gk$!p)_$2*0a$nqdwv=(9j8#91qhm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["fernandobenavidez.pythonanywhere.com"]
 
 APPS = [
     "app_remerashop"
@@ -79,10 +79,15 @@ WSGI_APPLICATION = 'remerashop.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'fernandobenavide$remerasshop',
+            'USER': 'fernandobenavide',
+            'PASSWORD': 'remerashop1234',
+            'HOST': 'fernandobenavidez.mysql.pythonanywhere-services.com',
+            'PORT': '3306',
+            'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
+        }
 }
 
 
@@ -120,12 +125,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static"]
-
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = 'static/'
+#STATICFILES_DIRS = [
+ #   BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
