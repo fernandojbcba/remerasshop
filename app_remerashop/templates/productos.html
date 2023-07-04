@@ -1,32 +1,34 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
 <main>
     <div class="main-color-productos">
         <h1>Todos los productos</h1>
-        <h2><a href="{% url 'Productos:create' %}">CREAR PRODUCTO</a></h2>
-        {% for producto in productos %}
+        <h2><a href="{% url 'productos:create' %}">CREAR productos</a></h2>
+        {% for producto in producto_list%}
         <div class="list">
-            <span>
-                <p>{{ forloop.counter }}</p>
+            <span class="id_productos" >
+                <p>{{forloop.counter}}</p>
             </span>
-            <span>
-                <p>{{ producto.titulo }}</p>
+            <span class="titulo_productos">
+                <p>{{producto.titulo}}</p>
             </span>
-            <span>
+            <span class="detalle_productos>
                 <label for="">Detalle: </label>
-                <a href="{% url 'Productos:detail' producto.id %}">+</a>
+                <a href="{% url 'productos:detail' producto.id %}">+</a>
             </span>
-            <span>
+            <span class="editar_productos>
                 <label for="">Editar: </label>
-                <a href="{% url 'Productos:update' producto.id %}">+</a>
+                <a href="{% url 'productos:update' producto.id %}">+</a>
             </span>
-            <span>
+            <span class="borrar_productos>
                 <label for="">Borrar: </label>
-                <a href="{% url 'Productos:delete' producto.id %}">+</a>
+                <a href="{% url 'productos:delete' producto.id %}">+</a>
             </span>
         </div>
+
         {% endfor %}
     </div>
 </main>
-
 {% endblock %}

@@ -6,26 +6,12 @@
         <h1>CREAR Producto</h1>
         <form method="post">
             {% csrf_token %}
-            <div>
-                <label for="id_titulo">Título:</label>
-                {{ form.titulo }}
-            </div>
-            <div>
-                <label for="id_imagen">Imagen:</label>
-                {{ form.imagen }}
-            </div>
-            <div>
-                <label for="id_categoria">Categoría:</label>
-                {{ form.categoria }}
-            </div>
-            <div>
-                <label for="id_precio">Precio:</label>
-                {{ form.precio }}
-            </div>
-            <input type="submit" value="Crear" />
+           
+            <div>{{form.as_p}}</div>
+            <input type="submit" value="{{ tipo }}" />
         </form>
 
-        /<a href="{% url 'Productos:all' %}">Volvamos al Inicio</a>
+        /<a href="{% url 'productos:all' %}">Volvamos al Inicio</a>
     </div>
 </main>
 {% endblock %}

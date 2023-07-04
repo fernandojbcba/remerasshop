@@ -3,13 +3,15 @@
 
 <main>
     <div class="main-color-productos">
-        <h1>{{ producto.titulo }}</h1>
-        {% for field in fields %}
-            <p>{{ field.verbose_name | upper }}</p>
-            <p>{{ producto.field.name }}</p>
+        <h1>{{producto.titulo}}</h1>
+        {% for label, value in producto.get_fields %}
+
+        <p>{{label | upper}}</p>
+        <p>{{value}}</p>
+
         {% endfor %}
-        <a href="{% url 'Productos:all' %}">Volver</a>
+
+        <a href="{% url 'productos:all' %}">BACK</a>
     </div>
 </main>
-
 {% endblock %}

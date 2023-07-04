@@ -177,31 +177,3 @@ main {
     position: relative;
   }
 }
-.main-color-productos {
-  color: whitesmoke;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.main-color-productos p,
-.main-color-productos a {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.main-color-productos a:active,
-.main-color-productos a:visited,
-.main-color-productos a:link,
-.main-color-productos a:focus {
-  text-decoration: none;
-  color: white;
-}
-
-.main-color-productos > .list {
-  display: flex;
-  flex-direction: row;
-  width: 30rem;
-  justify-content: space-between;
-}

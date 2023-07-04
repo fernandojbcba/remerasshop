@@ -75,7 +75,7 @@ form.addEventListener("submit", (evento) => {
   let nombresesion = "";
   const ListarUsuarios = async () => {
     try {
-      const response = await fetch("https://sheetdb.io/api/v1/xkc58vohznlmm");
+      const response = await fetch("http://127.0.0.1:8000/productos/api-usuario/?format=json");
       const data = await response.json();
       console.log(data);
       usuarios = data;
@@ -134,7 +134,7 @@ formreg.addEventListener("submit", (evento) => {
 });
 
 const CrearUsuario = (nombre, email, password) => {
-  fetch("https://sheetdb.io/api/v1/xkc58vohznlmm", {
+  fetch("http://127.0.0.1:8000/productos/api-usuario/?format=json", {
     method: "POST",
     headers: {
       Accept: "application/json",

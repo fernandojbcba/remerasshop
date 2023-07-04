@@ -10,21 +10,7 @@ from django.views.generic.detail import DetailView
 
 from .models import Producto
 
-from django.http import JsonResponse
-from .models import Usuario
 
-def obtener_usuarios(request):
-    usuarios = Usuario.objects.all()
-    data = {
-        'usuarios': list(usuarios.values())
-    }
-    return JsonResponse(data)
-def obtener_productos(request):
-    productos = Producto.objects.all()
-    data = {
-        'productos': list(productos.values())
-    }
-    return JsonResponse(data)
 
 class ProductosBaseView(View):
     template_name = 'productos.html'
