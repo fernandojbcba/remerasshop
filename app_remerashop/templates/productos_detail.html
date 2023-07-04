@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+    <div class="main-color-productos">
+        <h1>{{ producto.titulo }}</h1>
+        {% for field in fields %}
+            <p>{{ field.verbose_name | upper }}</p>
+            <p>{{ producto.field.name }}</p>
+        {% endfor %}
+        <a href="{% url 'Productos:all' %}">Volver</a>
+    </div>
+</main>
+
+{% endblock %}
