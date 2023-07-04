@@ -1,6 +1,6 @@
 let productos = [];
 
-fetch("http://127.0.0.1:8000/productos/api-producto/?format=json")
+fetch("http://127.0.0.1:8000/productos/api-producto/")
   .then((response) => response.json())
   .then((data) => {
     productos = data;
@@ -105,18 +105,29 @@ function agregarAlCarrito(e) {
   }).showToast();
 
   const idBoton = e.currentTarget.id;
-  const productoAgregado = productos.find(
-    (producto) => producto.id === idBoton
-  );
 
-  if (productosEnCarrito.some((producto) => producto.id === idBoton)) {
-    const index = productosEnCarrito.findIndex(
-      (producto) => producto.id === idBoton
-    );
-    productosEnCarrito[index].cantidad++;
-  } else {
-    productoAgregado.cantidad = 1;
-    productosEnCarrito.push(productoAgregado);
+  function buscarProductoPorId(productos, idBoton) {
+    for (let i = 0; i < productos.length; i++) {
+      if (productos[i].id === parseInt(idBoton)) {
+        return productos[i];
+    
+      }
+    }
+    return null;
+  }
+  const productoAgregado = buscarProductoPorId(productos, idBoton)
+console.log(productoAgregado)
+  if (productoAgregado) {
+    if (productosEnCarrito.some((producto) => producto.id === parseInt(idBoton))) {
+      const index = productosEnCarrito.findIndex(
+        (producto) => producto.id ===  parseInt(idBoton)
+      );
+      productosEnCarrito[index].cantidad++;
+    } else {
+      productoAgregado.cantidad = 1;
+      productosEnCarrito.push(productoAgregado);
+      //console.log(productosEnCarrito)
+    }
   }
 
   actualizarNumerito();
