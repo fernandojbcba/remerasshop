@@ -37,6 +37,8 @@ class tienda(TemplateView):
  ```   <link rel="stylesheet" href="{% static 'css/login.css' %}" /> ```
  ``` <script src="{% static './js/menu.js' %}"></script> ```
 
+## Se genera superuser para admin de pagina
+- http://remerashop.pythonanywhere.com/admin/
 ## Generar un CRUD con los apps de django, e integrarlo con el front de django.
 -  http://remerashop.pythonanywhere.com/productos/
 ## se generaron los api-rest 
