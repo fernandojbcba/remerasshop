@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$z)ctbmjkkgtygb&(g+r9gk$!p)_$2*0a$nqdwv=(9j8#91qhm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["fernandobenavidez.pythonanywhere.com"]
+ALLOWED_HOSTS = ["remerashop.pythonanywhere.com"]
 
 APPS = [
     "app_remerashop"
