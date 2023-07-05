@@ -1,6 +1,7 @@
 ***
 ## objetivos de este TFI
 ***
+![Alt text](capturapantalla.png)
 #### Utilizar la implementación de django views para generar las rutas y colocar los endpoints necesarios para que internamente reconozca los paths  que el proyecto requiere.
  ```
  rutas : 
