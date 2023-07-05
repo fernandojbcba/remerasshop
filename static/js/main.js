@@ -1,6 +1,6 @@
 let productos = [];
 
-fetch("http://remerashop.pythonanywhere.com/productos/api-producto/?format=json")
+fetch("http://remerashop.pythonanywhere.com/productos/api-producto/")
   .then((response) => response.json())
   .then((data) => {
     productos = data;
