@@ -87,7 +87,7 @@ DATABASES = {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'remerashop$remerashop',
             'USER': 'remerashop',
-            'PASSWORD': 'Argentina2013',
+            'PASSWORD': 'Argentina2023',
             'HOST': 'remerashop.mysql.pythonanywhere-services.com',
             'PORT': '3306',
         }
