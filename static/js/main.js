@@ -1,6 +1,6 @@
 let productos = [];
 
-fetch("http://127.0.0.1:8000/productos/api-producto/")
+fetch("http://fernandobenavidez.pythonanywhere.com/productos/api-producto/")
   .then((response) => response.json())
   .then((data) => {
     productos = data;
